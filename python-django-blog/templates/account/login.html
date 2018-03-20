@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <div class="row text-center vertical-middle-sm">
+        <h1>Login</h1>
+        <p>Input your username and password</p>
+        <form class="form-horizontal" action="." method="post">{% csrf_token %}
+            <!--{{ form.as_p }}-->
+            <div class="form-group" style="text-align:center">
+                <label for="{{ form.username.id_for_label }}" class="" style="color:red">
+                    <span class="glyphicon glyphicon-user">></span>Username</label>
+                <div class="">{{ form.username }}</div>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label}}" class="" style="color:blue">
+                    <span class="glyphicon glyphicon-floppy-open"></span>Password</label>
+                <div class="">{{ form.password }}</div>
+            </div>
+            <input type="submit" class="btn btn-primary btn-lg" value="Login">
+        </form>
+    </div>
+{% endblock %}

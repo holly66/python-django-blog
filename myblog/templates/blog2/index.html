@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}blog2 titles{% endblock %}
+{% block content %}
+    <div class="row text-center vertical-middle-sm">
+        <h1>我的博客</h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <ul>
+             {% for blog2 in blog2s %}
+                <li><a href=" {{blog2.id}} ">{{ blog2.title }}</li>
+              <br/>
+             {% endfor  %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
